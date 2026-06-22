@@ -34,7 +34,8 @@ export default function ProjectsGrid() {
     <section className="px-6 py-20">
       <div className="mx-auto max-w-5xl">
         <h2 className="text-2xl font-bold text-lime mb-2">Projects</h2>
-        <p className="text-olive mb-10">A selection of things I&apos;ve built.</p>
+        {/* sage on canvas: ~7.8:1 ✓ — olive (#636b2f) on canvas is only 3.2:1, fails AA for body text */}
+        <p className="text-sage mb-10">A selection of things I&apos;ve built.</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           {projects.map((p) => (
             <ProjectCard key={p.name} {...p} />
