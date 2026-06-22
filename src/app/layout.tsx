@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Pritz Belleza — Senior Front-End Engineer",
+  title: "Pritz Belleza | Senior Front-End Engineer",
   description:
     "Portfolio of John Pritz Belleza, senior front-end engineer specializing in design systems, Storybook, and Chromatic.",
 };
