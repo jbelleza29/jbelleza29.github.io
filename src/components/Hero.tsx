@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="flex flex-col justify-center min-h-[calc(100vh-3.5rem)] pt-14 px-6">
+    <section id="about" className="flex flex-col justify-center min-h-[calc(100vh-3.5rem)] pt-14 px-6">
       <div className="mx-auto max-w-5xl w-full">
         <span className="inline-block border border-olive/60 text-sage text-xs font-mono uppercase tracking-widest px-2.5 py-1 rounded-sm mb-6">
           Hi, I&apos;m
@@ -12,8 +12,8 @@ export default function Hero() {
           Senior Front-End Engineer
         </p>
         <p className="max-w-xl text-sage leading-relaxed mb-8">
-          I introduced Storybook and Chromatic at Huckberry, co-led a 2026
-          design-system rebrand, and I&apos;m building toward full-stack. I care
+          I brought Storybook and Chromatic into production, co-led a 2026
+          design-system rebrand, and I&apos;m growing into full-stack. I care
           deeply about component quality, visual regression testing, and tooling
           that makes teams move faster.
         </p>

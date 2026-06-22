@@ -31,7 +31,7 @@ const projects = [
 
 export default function ProjectsGrid() {
   return (
-    <section className="px-6 py-20 bg-card">
+    <section id="projects" className="px-6 py-20 bg-card">
       <div className="mx-auto max-w-5xl">
         <h2 className="text-2xl font-bold text-lime mb-2">Projects</h2>
         <p className="text-sage mb-10">A selection of things I&apos;ve built.</p>
