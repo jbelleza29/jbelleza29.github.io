@@ -1,8 +1,7 @@
 export default function NavBar() {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-stroke/60 bg-canvas/90 backdrop-blur-md">
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-stroke bg-canvas/90 backdrop-blur-md">
       <div className="mx-auto max-w-5xl px-6 h-14 flex items-center justify-between">
-        {/* Brand — lime on near-black: ~10.5:1 ✓ */}
         <span className="font-semibold tracking-tight text-lime">pritz.dev</span>
         <div className="flex items-center gap-5 text-sm text-sage">
           <a
@@ -14,7 +13,7 @@ export default function NavBar() {
             GitHub
           </a>
           <a
-            href="https://linkedin.com/in/jbelleza29"
+            href="https://www.linkedin.com/in/john-pritz-belleza-a651b6126/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-lime transition-colors duration-200"
