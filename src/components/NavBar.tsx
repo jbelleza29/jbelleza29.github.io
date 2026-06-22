@@ -9,11 +9,11 @@ export default function NavBar() {
             <a href="#about" className="hover:text-lime transition-colors duration-200">
               About
             </a>
-            <a href="#experience" className="hover:text-lime transition-colors duration-200">
-              Experience
-            </a>
             <a href="#projects" className="hover:text-lime transition-colors duration-200">
               Projects
+            </a>
+            <a href="#experience" className="hover:text-lime transition-colors duration-200">
+              Experience
             </a>
           </div>
           <div className="flex items-center gap-4 text-sage border-l border-stroke pl-6">
