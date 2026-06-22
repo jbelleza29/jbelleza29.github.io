@@ -1,11 +1,27 @@
 const experiences = [
   {
-    years: "2021 — Present",
-    title: "Lead Front-End Engineer",
+    years: "Dec 2020 — Present",
+    title: "Software Engineer, Front-End",
     company: "Huckberry",
     description:
-      "Brought Storybook and Chromatic into the stack — component-driven development with visual regression tests running in CI on every PR. Co-led a ground-up design-system rebrand in 2026, from token strategy through to full component rollout across the product.",
-    tech: ["React", "TypeScript", "Next.js", "Storybook", "Chromatic", "Tailwind CSS", "GraphQL"],
+      "Building React/Redux features for a high-traffic outdoor retail platform. The biggest thing I've shipped here: stood up Storybook from scratch — config, CI pipeline, full component library — then brought in Chromatic so no UI change lands without a screenshot review. Co-led a company-wide rebrand, wiring design tokens from Figma all the way through to component migration across checkout, nav, and core UI. Also contributed to the Rails backend and ran A/B tests that moved conversion metrics.",
+    tech: ["React", "Redux", "TypeScript", "Storybook", "Chromatic", "Figma", "GraphQL", "Ruby on Rails"],
+  },
+  {
+    years: "Mar 2020 — Jun 2020",
+    title: "Full-Stack Developer",
+    company: "Iona & Co.",
+    description:
+      "Short contract for a Finnish client — built a reservation management platform with separate admin and consumer portals, plus a CMS. Also shipped a cross-platform app for machine rental and purchasing services.",
+    tech: ["React", "Node.js", "PostgreSQL"],
+  },
+  {
+    years: "May 2017 — Nov 2019",
+    title: "Software Engineer",
+    company: "Appen",
+    description:
+      "Two and a half years at an Australian AI/data company. Architected the centralized data collection platform that became core infrastructure — a multi-format client/API model that drove tens of millions in AUD revenue. Also built a global telephony app handling ISDN/VoIP calls across multi-million-dollar projects, a time-tracking system with role-based access, and Python automation that cut a significant chunk of manual project-manager work.",
+    tech: ["Python", "Flask", "Django", "JavaScript", "REST APIs", "PostgreSQL", "GraphQL"],
   },
 ];
 
@@ -22,7 +38,7 @@ export default function Experience() {
               className="bg-canvas border border-olive/40 rounded-xl p-6 hover:border-olive transition-colors duration-200"
             >
               <div className="flex flex-col sm:flex-row sm:gap-10">
-                <div className="sm:w-32 shrink-0 mb-3 sm:mb-0 sm:pt-0.5">
+                <div className="sm:w-40 shrink-0 mb-3 sm:mb-0 sm:pt-0.5">
                   <p className="text-xs font-mono text-sage/60 uppercase tracking-widest">
                     {exp.years}
                   </p>
