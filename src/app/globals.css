@@ -21,85 +21,97 @@ body {
   color: #d4de95;
 }
 
-/* ── Nav jelly animation ── */
+/* ── Jelly nav (CodePen replication) ── */
 
-.nav-link-wrapper {
+.jnav-overflow { overflow: visible; }
+
+.jnav-link {
   position: relative;
   display: inline-block;
-  overflow: visible;
+  margin: 0 8px;
 }
-.nav-link-wrapper:hover {
-  z-index: 9999;
-}
-.nav-link-wrapper:hover .nav-text {
-  animation: navTiltBounce 0.15s ease forwards;
-}
-.nav-link-wrapper.nav-even:hover .nav-text {
-  animation: navTiltBounceAlt 0.15s ease forwards;
+.jnav-link:hover { z-index: 9999; }
+
+.jnav-fallback {
+  font-size: 1em;
+  letter-spacing: 4px;
+  line-height: 0;
+  opacity: 0;
+  position: relative;
+  top: 15px;
+  white-space: nowrap;
 }
 
-.nav-shape-wrapper {
+.jnav-img-wrapper { position: relative; }
+
+.jnav-img {
+  width: auto;
+  height: 36px;
+  position: absolute;
+  left: 0; right: 0; top: -5px;
+  margin: 0 auto;
+  z-index: 999;
+  display: block;
+}
+.jnav-img.jnav-active {
+  display: none;
+  z-index: -1;
+}
+
+.jnav-link:hover .jnav-img {
+  animation: jnavTiltBounce 0.15s ease forwards;
+  display: block;
+}
+.jnav-link.jnav-even:hover .jnav-img {
+  animation: jnavTiltBounceAlt 0.15s ease forwards;
+}
+
+.jnav-shape-wrapper {
   display: none;
   position: absolute;
-  top: -10px;
-  left: -20px;
-  right: -20px;
+  top: 0; left: 0; right: 0;
   filter: sepia(50%) saturate(3);
   pointer-events: none;
 }
-.nav-link-wrapper:hover .nav-shape-wrapper {
+.jnav-link:hover .jnav-shape-wrapper {
   display: block;
   transform: rotate(-6deg);
 }
-.nav-link-wrapper.nav-even:hover .nav-shape-wrapper {
+.jnav-link.jnav-even:hover .jnav-shape-wrapper {
   transform: rotate(11deg);
 }
 
-.nav-shape {
+.jnav-shape {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   height: 35px;
   overflow: hidden;
   transition: all 0.1s linear;
 }
-.nav-shape svg {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
-.nav-shape-red {
-  opacity: 0.8;
-  animation-duration: 0.45s;
-  animation-delay: 0.08s;
-}
-.nav-shape-cyan {
-  mix-blend-mode: screen;
-  animation-duration: 0.4s;
-  animation-delay: 0.05s;
-}
-.nav-jelly {
-  animation-name: navJelly;
+.jnav-shape svg { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+
+.jnav-red  { opacity: 0.8; animation-duration: 0.45s; animation-delay: 0.08s; }
+.jnav-cyan { mix-blend-mode: screen; animation-duration: 0.4s; animation-delay: 0.05s; }
+
+.jnav-jelly {
+  animation-name: jnavJelly;
   transform-origin: center;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
 
-@keyframes navTiltBounce {
+@keyframes jnavTiltBounce {
   0%   { transform: scale(1)    rotate(-7deg); }
-  50%  { transform: scale(1.3)  rotate(-7deg); }
+  50%  { transform: scale(1.5)  rotate(-7deg); }
   100% { transform: scale(1.15) rotate(-7deg); }
 }
-@keyframes navTiltBounceAlt {
+@keyframes jnavTiltBounceAlt {
   0%   { transform: scale(1)    rotate(7deg); }
-  50%  { transform: scale(1.3)  rotate(7deg); }
+  50%  { transform: scale(1.5)  rotate(7deg); }
   100% { transform: scale(1.15) rotate(7deg); }
 }
-@keyframes navJelly {
-  0%   { transform: scale(1.25, 1)   skewX(20deg)  translateY(3px)  rotateX(40deg)  rotateY(10deg)  rotateZ(-10deg); }
-  50%  { transform: scale(1.25, 1.1) skewX(-15deg) translateY(-2px) translateZ(-30px); }
-  100% { transform: scale(1.25, 1)   skewX(20deg)  translateY(3px)  rotateX(-40deg) rotateY(-10deg) rotateZ(-15deg); }
+@keyframes jnavJelly {
+  0%   { transform: scale(1.25,1)   skewX(20deg)  translateY(3px)  rotateX(40deg)  rotateY(10deg)  rotateZ(-10deg); }
+  50%  { transform: scale(1.25,1.1) skewX(-15deg) translateY(-2px) translateZ(-30px); }
+  100% { transform: scale(1.25,1)   skewX(20deg)  translateY(3px)  rotateX(-40deg) rotateY(-10deg) rotateZ(-15deg); }
 }
