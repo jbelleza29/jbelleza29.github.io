@@ -28,24 +28,51 @@ body {
 .jnav-link {
   position: relative;
   display: inline-block;
-  margin: 0px 16px;
+  height: 40px;       /* explicit height — images and shapes anchor to this */
+  margin: 0 16px;
 }
-.jnav-link:hover {
-  z-index: 9999;
-}
+.jnav-link:hover { z-index: 9999; }
 
-/* fallback text is invisible but defines the link-wrapper width */
+/* invisible but keeps the link-wrapper wide enough for the image */
 .jnav-fallback {
-  font-size: 1.1em;
+  font-size: 1em;
   letter-spacing: 4px;
-  line-height: 0;
+  line-height: 40px;
   opacity: 0;
-  position: relative;
-  top: 15px;
-  left: 0;
+  white-space: nowrap;
 }
 
-/* shape-wrapper hidden by default */
+/* NO position: relative here — images must anchor to .jnav-link, not this wrapper */
+.jnav-img-wrapper { }
+
+/* both images anchor to .jnav-link */
+.jnav-img {
+  width: auto;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 999;
+  display: block;
+}
+.jnav-img.jnav-normal { display: block; }
+.jnav-img.jnav-active { display: none; z-index: -1; }
+
+/* hover: animate images */
+.jnav-link:hover .jnav-img {
+  animation: jnavTiltBounce .15s ease;
+  animation-fill-mode: forwards;
+  display: block;
+}
+.jnav-link:hover .jnav-img.jnav-normal { mix-blend-mode: darken; }
+.jnav-link.jnav-even:hover .jnav-img {
+  animation: jnavTiltBounceAlt .15s ease;
+  animation-fill-mode: forwards;
+}
+
+/* shapes anchor to .jnav-link */
 .jnav-shape-wrapper {
   display: none;
   position: absolute;
@@ -55,54 +82,15 @@ body {
   filter: sepia(50%) saturate(3);
   pointer-events: none;
 }
-
-/* hover: show shapes, rotate, squish cyan */
 .jnav-link:hover .jnav-shape-wrapper {
-  transform: rotate(-6deg);
   display: block;
+  transform: rotate(-6deg);
 }
 .jnav-link:hover .jnav-shape-wrapper .jnav-shape.jnav-cyan {
   transform: scale(3, .1);
 }
+.jnav-link.jnav-even:hover .jnav-shape-wrapper { transform: rotate(11deg); }
 
-/* hover: animate images */
-.jnav-link:hover .jnav-img-wrapper .jnav-img {
-  animation: jnavTiltBounce .15s ease;
-  animation-fill-mode: forwards;
-  display: block;
-}
-.jnav-link:hover .jnav-img-wrapper .jnav-img.jnav-normal {
-  mix-blend-mode: darken;
-}
-
-/* even item overrides */
-.jnav-link.jnav-even:hover .jnav-shape-wrapper {
-  transform: rotate(11deg);
-}
-.jnav-link.jnav-even:hover .jnav-img-wrapper .jnav-img {
-  animation: jnavTiltBounceAlt .15s ease;
-  animation-fill-mode: forwards;
-}
-
-/* images */
-.jnav-img-wrapper {
-  position: relative;
-}
-.jnav-img {
-  width: auto;
-  height: 40px;
-  display: block;
-  left: 0;
-  right: 0;
-  top: -5px;
-  margin: 0 auto;
-  position: absolute;
-  z-index: 999;
-}
-.jnav-img.jnav-normal { display: block; }
-.jnav-img.jnav-active { display: none; z-index: -1; }
-
-/* shapes */
 .jnav-shape {
   transition: all .1s linear;
   position: absolute;
@@ -112,23 +100,11 @@ body {
   height: 35px;
   overflow: hidden;
 }
-.jnav-shape svg {
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-.jnav-shape.jnav-cyan {
-  mix-blend-mode: screen;
-  animation-delay: 0.05s;
-  animation-duration: .4s;
-}
-.jnav-shape.jnav-red {
-  animation-duration: .45s;
-  animation-delay: 0.08s;
-  opacity: .8;
-}
+.jnav-shape svg { position: absolute; left: 0; top: 0; }
 
-/* jelly */
+.jnav-shape.jnav-red  { opacity: .8; animation-duration: .45s; animation-delay: .08s; }
+.jnav-shape.jnav-cyan { mix-blend-mode: screen; animation-duration: .4s; animation-delay: .05s; }
+
 .jnav-jelly {
   animation-name: jnavJelly;
   transform-origin: center;
