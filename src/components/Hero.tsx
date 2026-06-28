@@ -27,7 +27,7 @@ export default function Hero() {
           I brought Storybook and Chromatic into production, co-led a 2026
           design-system rebrand, and I&apos;m growing into full-stack. I care
           deeply about component quality, visual regression testing, and tooling
-          that makes teams move faster.
+          that makes teams move faster. Based in Ontario, Canada.
         </p>
         <div className="flex gap-4 flex-wrap">
           <a

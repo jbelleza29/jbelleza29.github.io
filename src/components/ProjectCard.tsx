@@ -37,7 +37,7 @@ export default function ProjectCard({
             rel="noopener noreferrer"
             className="text-sm font-medium text-lime underline underline-offset-2 decoration-lime/40 hover:decoration-lime transition-all duration-200"
           >
-            Live ↗
+            Live
           </a>
         )}
         <a
@@ -46,7 +46,7 @@ export default function ProjectCard({
           rel="noopener noreferrer"
           className="text-sm text-sage hover:text-lime transition-colors duration-200"
         >
-          GitHub ↗
+          GitHub
         </a>
       </div>
     </div>
