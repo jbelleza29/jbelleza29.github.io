@@ -21,78 +21,114 @@ body {
   color: #d4de95;
 }
 
-/* ── Jelly nav (CodePen replication) ── */
+/* ── Jelly nav ── */
 
 .jnav-overflow { overflow: visible; }
 
 .jnav-link {
   position: relative;
   display: inline-block;
-  margin: 0 8px;
+  margin: 0px 16px;
 }
-.jnav-link:hover { z-index: 9999; }
+.jnav-link:hover {
+  z-index: 9999;
+}
 
+/* fallback text is invisible but defines the link-wrapper width */
 .jnav-fallback {
-  font-size: 1em;
+  font-size: 1.1em;
   letter-spacing: 4px;
   line-height: 0;
   opacity: 0;
   position: relative;
   top: 15px;
-  white-space: nowrap;
+  left: 0;
 }
 
-.jnav-img-wrapper { position: relative; }
-
-.jnav-img {
-  width: auto;
-  height: 36px;
-  position: absolute;
-  left: 0; right: 0; top: -5px;
-  margin: 0 auto;
-  z-index: 999;
-  display: block;
-}
-.jnav-img.jnav-active {
-  display: none;
-  z-index: -1;
-}
-
-.jnav-link:hover .jnav-img {
-  animation: jnavTiltBounce 0.15s ease forwards;
-  display: block;
-}
-.jnav-link.jnav-even:hover .jnav-img {
-  animation: jnavTiltBounceAlt 0.15s ease forwards;
-}
-
+/* shape-wrapper hidden by default */
 .jnav-shape-wrapper {
   display: none;
   position: absolute;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   filter: sepia(50%) saturate(3);
   pointer-events: none;
 }
+
+/* hover: show shapes, rotate, squish cyan */
 .jnav-link:hover .jnav-shape-wrapper {
-  display: block;
   transform: rotate(-6deg);
+  display: block;
 }
+.jnav-link:hover .jnav-shape-wrapper .jnav-shape.jnav-cyan {
+  transform: scale(3, .1);
+}
+
+/* hover: animate images */
+.jnav-link:hover .jnav-img-wrapper .jnav-img {
+  animation: jnavTiltBounce .15s ease;
+  animation-fill-mode: forwards;
+  display: block;
+}
+.jnav-link:hover .jnav-img-wrapper .jnav-img.jnav-normal {
+  mix-blend-mode: darken;
+}
+
+/* even item overrides */
 .jnav-link.jnav-even:hover .jnav-shape-wrapper {
   transform: rotate(11deg);
 }
+.jnav-link.jnav-even:hover .jnav-img-wrapper .jnav-img {
+  animation: jnavTiltBounceAlt .15s ease;
+  animation-fill-mode: forwards;
+}
 
-.jnav-shape {
+/* images */
+.jnav-img-wrapper {
+  position: relative;
+}
+.jnav-img {
+  width: auto;
+  height: 40px;
+  display: block;
+  left: 0;
+  right: 0;
+  top: -5px;
+  margin: 0 auto;
   position: absolute;
-  top: 0; left: 0; right: 0;
+  z-index: 999;
+}
+.jnav-img.jnav-normal { display: block; }
+.jnav-img.jnav-active { display: none; z-index: -1; }
+
+/* shapes */
+.jnav-shape {
+  transition: all .1s linear;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 35px;
   overflow: hidden;
-  transition: all 0.1s linear;
 }
-.jnav-shape svg { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+.jnav-shape svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.jnav-shape.jnav-cyan {
+  mix-blend-mode: screen;
+  animation-delay: 0.05s;
+  animation-duration: .4s;
+}
+.jnav-shape.jnav-red {
+  animation-duration: .45s;
+  animation-delay: 0.08s;
+  opacity: .8;
+}
 
-.jnav-red  { opacity: 0.8; animation-duration: 0.45s; animation-delay: 0.08s; }
-.jnav-cyan { mix-blend-mode: screen; animation-duration: 0.4s; animation-delay: 0.05s; }
-
+/* jelly */
 .jnav-jelly {
   animation-name: jnavJelly;
   transform-origin: center;
@@ -111,7 +147,7 @@ body {
   100% { transform: scale(1.15) rotate(7deg); }
 }
 @keyframes jnavJelly {
-  0%   { transform: scale(1.25,1)   skewX(20deg)  translateY(3px)  rotateX(40deg)  rotateY(10deg)  rotateZ(-10deg); }
-  50%  { transform: scale(1.25,1.1) skewX(-15deg) translateY(-2px) translateZ(-30px); }
-  100% { transform: scale(1.25,1)   skewX(20deg)  translateY(3px)  rotateX(-40deg) rotateY(-10deg) rotateZ(-15deg); }
+  0%   { width: 100%; transform: scale(1.25,1)   skewX(20deg)  translateY(3px)  rotateX(40deg)  rotateY(10deg)  rotateZ(-10deg); }
+  50%  { width: 100%; transform: scale(1.25,1.1) skewX(-15deg) translateY(-2px) translateZ(-30px); }
+  100% { width: 100%; transform: scale(1.25,1)   skewX(20deg)  translateY(3px)  rotateX(-40deg) rotateY(-10deg) rotateZ(-15deg); }
 }
