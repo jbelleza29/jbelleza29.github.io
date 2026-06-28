@@ -44,7 +44,7 @@ export default function ProjectCard({
           href={repoUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-sm text-sage hover:text-lime transition-colors duration-200"
+          className="text-sm text-sage underline underline-offset-2 decoration-sage/40 hover:text-lime hover:decoration-lime/40 transition-all duration-200"
         >
           GitHub
         </a>
