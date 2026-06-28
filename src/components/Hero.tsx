@@ -23,12 +23,25 @@ export default function Hero() {
         <p className="text-xl sm:text-2xl text-sage mb-6">
           Senior Front-End Engineer
         </p>
-        <p className="max-w-xl text-sage leading-relaxed mb-8">
-          I brought Storybook and Chromatic into production, co-led a 2026
-          design-system rebrand, and I&apos;m growing into full-stack. I care
-          deeply about component quality, visual regression testing, and tooling
-          that makes teams move faster. Based in Ontario, Canada.
-        </p>
+        <div className="max-w-xl flex flex-col gap-4 text-sage leading-relaxed mb-8">
+          <p>
+            I&apos;ve spent 8+ years building accessible, component-driven
+            interfaces for products people actually use. I brought Storybook and
+            Chromatic into production, co-led a full design-system rebrand, and
+            I&apos;m now pushing into full-stack. Ontario-based.
+          </p>
+          <p>
+            At Huckberry, I&apos;m embedded in the front-end team working
+            closely with designers and product managers: running A/B tests,
+            identifying UI opportunities, and shipping features that move revenue
+            and retention. The work lives at the intersection of engineering
+            judgment and product thinking.
+          </p>
+          <p>
+            Outside of work, you&apos;ll find me hanging out with my cats,
+            theorycrafting a Path of Exile build, or out on a run.
+          </p>
+        </div>
         <div className="flex gap-4 flex-wrap">
           <a
             href="https://github.com/jbelleza29"
