@@ -1,15 +1,10 @@
+@layer properties, reset, theme, base, astryx-base, astryx-theme, components, utilities;
+
 @import "tailwindcss";
 
-@theme inline {
-  --color-canvas:  #0f1208;
-  --color-card:    #252a13;
-  --color-stroke:  #3d4127;
-  --color-olive:   #636b2f;
-  --color-sage:    #bac095;
-  --color-lime:    #d4de95;
-  --font-sans:     var(--font-space);
-  --font-mono:     var(--font-geist-mono);
-}
+@import "@astryxdesign/core/reset.css";
+@import "@astryxdesign/core/astryx.css";
+@import "../themes/portfolio.css";
 
 html {
   scroll-behavior: smooth;
@@ -17,124 +12,6 @@ html {
 }
 
 body {
-  background-color: #0a0a0a;
-  background-image:
-    linear-gradient(rgba(10, 10, 10, 0.4), rgba(10, 10, 10, 0.4)),
-    url("/bg.png");
-  background-repeat: no-repeat, no-repeat;
-  background-size: cover, cover;
-  background-position: center, center;
-  background-attachment: fixed, fixed;
-  color: #d4de95;
-}
-
-/* ── Jelly nav ── */
-
-.jnav-overflow { overflow: visible; }
-
-.jnav-link {
-  position: relative;
-  display: inline-block;
-  height: 40px;       /* explicit height — images and shapes anchor to this */
-  margin: 0 16px;
-}
-.jnav-link:hover { z-index: 9999; }
-
-/* visible text label — in flow so the link sizes to it, and above the shapes */
-.jnav-label {
-  position: relative;
-  z-index: 999;
-  display: block;
-  font-size: 0.95rem;
-  letter-spacing: 2px;
-  line-height: 40px;
-  color: var(--color-sage);
-  white-space: nowrap;
-  transform-origin: center;
-  transition: color .2s ease;
-}
-
-/* hover: tilt/bounce the word, brighten it */
-.jnav-link:hover .jnav-label {
-  color: var(--color-lime);
-  animation: jnavTiltBounce .15s ease;
-  animation-fill-mode: forwards;
-}
-.jnav-link.jnav-even:hover .jnav-label {
-  animation: jnavTiltBounceAlt .15s ease;
-  animation-fill-mode: forwards;
-}
-
-/* image label (persona sticker svg/png) — above the shapes, sizes the link */
-.jnav-label-img {
-  position: relative;
-  z-index: 999;
-  display: block;
-  height: 30px;
-  width: auto;
-  transform-origin: center;
-}
-.jnav-link:hover .jnav-label-img {
-  animation: jnavTiltBounce .15s ease;
-  animation-fill-mode: forwards;
-}
-.jnav-link.jnav-even:hover .jnav-label-img {
-  animation: jnavTiltBounceAlt .15s ease;
-  animation-fill-mode: forwards;
-}
-
-/* shapes anchor to .jnav-link */
-.jnav-shape-wrapper {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  filter: sepia(50%) saturate(3);
-  pointer-events: none;
-}
-.jnav-link:hover .jnav-shape-wrapper {
-  display: block;
-  transform: rotate(-6deg);
-}
-.jnav-link:hover .jnav-shape-wrapper .jnav-shape.jnav-cyan {
-  transform: scale(3, .1);
-}
-.jnav-link.jnav-even:hover .jnav-shape-wrapper { transform: rotate(11deg); }
-
-.jnav-shape {
-  transition: all .1s linear;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 35px;
-  overflow: hidden;
-}
-.jnav-shape svg { position: absolute; left: 0; top: 0; }
-
-.jnav-shape.jnav-red  { opacity: .8; animation-duration: .45s; animation-delay: .08s; }
-.jnav-shape.jnav-cyan { mix-blend-mode: screen; animation-duration: .4s; animation-delay: .05s; }
-
-.jnav-jelly {
-  animation-name: jnavJelly;
-  transform-origin: center;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-
-@keyframes jnavTiltBounce {
-  0%   { transform: scale(1)    rotate(-7deg); }
-  50%  { transform: scale(1.5)  rotate(-7deg); }
-  100% { transform: scale(1.15) rotate(-7deg); }
-}
-@keyframes jnavTiltBounceAlt {
-  0%   { transform: scale(1)    rotate(7deg); }
-  50%  { transform: scale(1.5)  rotate(7deg); }
-  100% { transform: scale(1.15) rotate(7deg); }
-}
-@keyframes jnavJelly {
-  0%   { width: 100%; transform: scale(1.25,1)   skewX(20deg)  translateY(3px)  rotateX(40deg)  rotateY(10deg)  rotateZ(-10deg); }
-  50%  { width: 100%; transform: scale(1.25,1.1) skewX(-15deg) translateY(-2px) translateZ(-30px); }
-  100% { width: 100%; transform: scale(1.25,1)   skewX(20deg)  translateY(3px)  rotateX(-40deg) rotateY(-10deg) rotateZ(-15deg); }
+  background-color: var(--color-background-body);
+  color: var(--color-text-primary);
 }

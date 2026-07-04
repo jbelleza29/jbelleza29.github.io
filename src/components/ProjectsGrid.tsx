@@ -1,3 +1,6 @@
+import { VStack } from "@astryxdesign/core/VStack";
+import { Text, Heading } from "@astryxdesign/core/Text";
+import { Grid } from "@astryxdesign/core/Grid";
 import ProjectCard from "./ProjectCard";
 
 const projects = [
@@ -33,12 +36,18 @@ export default function ProjectsGrid() {
   return (
     <section id="projects" className="px-6 py-20">
       <div className="mx-auto max-w-5xl">
-        <h2 className="text-2xl font-bold text-lime mb-2">Projects</h2>
-        <p className="text-sage mb-10">A selection of things I&apos;ve built.</p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          {projects.map((p) => (
-            <ProjectCard key={p.name} {...p} />
-          ))}
+        <VStack gap={2}>
+          <Heading level={2}>Projects</Heading>
+          <Text type="body" color="secondary">
+            A selection of things I&apos;ve built.
+          </Text>
+        </VStack>
+        <div className="mt-10">
+          <Grid columns={{ minWidth: 280 }} gap={5}>
+            {projects.map((p) => (
+              <ProjectCard key={p.name} {...p} />
+            ))}
+          </Grid>
         </div>
       </div>
     </section>

@@ -1,3 +1,9 @@
+import { Card } from "@astryxdesign/core/Card";
+import { VStack } from "@astryxdesign/core/VStack";
+import { HStack } from "@astryxdesign/core/HStack";
+import { Text, Heading } from "@astryxdesign/core/Text";
+import { Badge } from "@astryxdesign/core/Badge";
+
 const experiences = [
   {
     years: "Dec 2020 - Present",
@@ -29,41 +35,39 @@ export default function Experience() {
   return (
     <section id="experience" className="px-6 py-20">
       <div className="mx-auto max-w-5xl">
-        <h2 className="text-2xl font-bold text-lime mb-2">Experience</h2>
-        <p className="text-sage mb-10">Where I&apos;ve worked and what I&apos;ve shipped.</p>
-        <div className="flex flex-col gap-5">
+        <VStack gap={2}>
+          <Heading level={2}>Experience</Heading>
+          <Text type="body" color="secondary">
+            Where I&apos;ve worked and what I&apos;ve shipped.
+          </Text>
+        </VStack>
+        <div className="flex flex-col gap-5 mt-10">
           {experiences.map((exp) => (
-            <div
-              key={exp.title + exp.company}
-              className="bg-canvas/80 backdrop-blur-sm border border-olive/40 rounded-xl p-6 hover:border-olive transition-colors duration-200"
-            >
+            <Card key={exp.title + exp.company} padding={6}>
               <div className="flex flex-col sm:flex-row sm:gap-10">
-                <div className="sm:w-40 shrink-0 mb-3 sm:mb-0 sm:pt-0.5">
-                  <p className="text-xs font-mono text-sage/60 uppercase tracking-widest">
+                <div className="sm:w-40 shrink-0 mb-3 sm:mb-0">
+                  <Text type="supporting" as="p">
                     {exp.years}
-                  </p>
+                  </Text>
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-lime font-semibold text-lg leading-tight mb-0.5">
-                    {exp.title}
-                  </h3>
-                  <p className="text-sage/60 text-sm mb-3">{exp.company}</p>
-                  <p className="text-sage text-sm leading-relaxed mb-4">
+                <VStack gap={3}>
+                  <VStack gap={0.5}>
+                    <Heading level={3}>{exp.title}</Heading>
+                    <Text type="body" color="secondary">
+                      {exp.company}
+                    </Text>
+                  </VStack>
+                  <Text type="body" color="secondary">
                     {exp.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
+                  </Text>
+                  <HStack gap={2} wrap="wrap">
                     {exp.tech.map((t) => (
-                      <span
-                        key={t}
-                        className="text-xs px-2 py-1 rounded-md bg-olive/20 border border-olive/40 text-sage"
-                      >
-                        {t}
-                      </span>
+                      <Badge key={t} label={t} />
                     ))}
-                  </div>
-                </div>
+                  </HStack>
+                </VStack>
               </div>
-            </div>
+            </Card>
           ))}
         </div>
       </div>

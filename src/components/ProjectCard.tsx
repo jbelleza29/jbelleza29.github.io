@@ -1,3 +1,10 @@
+import { Card } from "@astryxdesign/core/Card";
+import { VStack } from "@astryxdesign/core/VStack";
+import { HStack } from "@astryxdesign/core/HStack";
+import { Text, Heading } from "@astryxdesign/core/Text";
+import { Badge } from "@astryxdesign/core/Badge";
+import { Link } from "@astryxdesign/core/Link";
+
 interface ProjectCardProps {
   name: string;
   description: string;
@@ -14,41 +21,30 @@ export default function ProjectCard({
   repoUrl,
 }: ProjectCardProps) {
   return (
-    <div className="bg-canvas/80 backdrop-blur-sm border border-olive/40 rounded-xl p-6 flex flex-col gap-4 hover:border-olive transition-colors duration-200">
-      <div>
-        <h3 className="text-lime font-semibold text-lg mb-2">{name}</h3>
-        <p className="text-sage text-sm leading-relaxed">{description}</p>
-      </div>
-      <div className="flex flex-wrap gap-2 mt-auto">
-        {tech.map((t) => (
-          <span
-            key={t}
-            className="text-xs px-2 py-1 rounded-md bg-olive/20 border border-olive/40 text-sage"
-          >
-            {t}
-          </span>
-        ))}
-      </div>
-      <div className="flex items-center gap-4 pt-2 border-t border-stroke">
-        {liveUrl && (
-          <a
-            href={liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-medium text-lime underline underline-offset-2 decoration-lime/40 hover:decoration-lime transition-all duration-200"
-          >
-            Live
-          </a>
-        )}
-        <a
-          href={repoUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-sm text-sage underline underline-offset-2 decoration-sage/40 hover:text-lime hover:decoration-lime/40 transition-all duration-200"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+    <Card padding={6}>
+      <VStack gap={4}>
+        <VStack gap={2}>
+          <Heading level={3}>{name}</Heading>
+          <Text type="body" color="secondary">
+            {description}
+          </Text>
+        </VStack>
+        <HStack gap={2} wrap="wrap">
+          {tech.map((t) => (
+            <Badge key={t} label={t} />
+          ))}
+        </HStack>
+        <HStack gap={4}>
+          {liveUrl && (
+            <Link href={liveUrl} isExternalLink hasUnderline>
+              Live
+            </Link>
+          )}
+          <Link href={repoUrl} isExternalLink hasUnderline>
+            GitHub
+          </Link>
+        </HStack>
+      </VStack>
+    </Card>
   );
 }
