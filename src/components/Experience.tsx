@@ -35,7 +35,7 @@ export default function Experience() {
           {experiences.map((exp) => (
             <div
               key={exp.title + exp.company}
-              className="bg-canvas border border-olive/40 rounded-xl p-6 hover:border-olive transition-colors duration-200"
+              className="bg-canvas/80 backdrop-blur-sm border border-olive/40 rounded-xl p-6 hover:border-olive transition-colors duration-200"
             >
               <div className="flex flex-col sm:flex-row sm:gap-10">
                 <div className="sm:w-40 shrink-0 mb-3 sm:mb-0 sm:pt-0.5">

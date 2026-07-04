@@ -14,7 +14,7 @@ export default function ProjectCard({
   repoUrl,
 }: ProjectCardProps) {
   return (
-    <div className="bg-canvas border border-olive/40 rounded-xl p-6 flex flex-col gap-4 hover:border-olive transition-colors duration-200">
+    <div className="bg-canvas/80 backdrop-blur-sm border border-olive/40 rounded-xl p-6 flex flex-col gap-4 hover:border-olive transition-colors duration-200">
       <div>
         <h3 className="text-lime font-semibold text-lg mb-2">{name}</h3>
         <p className="text-sage text-sm leading-relaxed">{description}</p>

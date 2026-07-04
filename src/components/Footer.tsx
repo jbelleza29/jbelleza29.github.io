@@ -12,7 +12,7 @@ const LinkedInIcon = () => (
 
 export default function Footer() {
   return (
-    <footer className="mt-auto bg-card border-t border-stroke px-6 py-8">
+    <footer className="mt-auto bg-card/70 backdrop-blur-sm border-t border-stroke px-6 py-8">
       <div className="mx-auto max-w-5xl flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-sage/70">
         <span>© 2026 John Pritz Belleza</span>
         <div className="flex gap-5">

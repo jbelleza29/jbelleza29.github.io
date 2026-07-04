@@ -17,21 +17,21 @@ const projects = [
   },
   {
     name: "just-cook",
-    description: "Recipe discovery and meal planning app.",
+    description: "Recipe discovery and meal planning app. 1-day Take-home project",
     tech: ["TypeScript", "React"],
     repoUrl: "https://github.com/jbelleza29/just-cook",
   },
   {
-    name: "nba-playerhub",
-    description: "NBA player stats and analytics hub.",
-    tech: ["TypeScript", "React"],
-    repoUrl: "https://github.com/jbelleza29/nba-playerhub",
+    name: "persona-5-font-gen",
+    description: "Type text, get a Persona 5 calling-card style SVG graphic. Pure SVG generator core.",
+    tech: ["TypeScript", "React", "SVG"],
+    repoUrl: "https://github.com/jbelleza29/persona-5-font-gen",
   },
 ];
 
 export default function ProjectsGrid() {
   return (
-    <section id="projects" className="px-6 py-20 bg-card">
+    <section id="projects" className="px-6 py-20">
       <div className="mx-auto max-w-5xl">
         <h2 className="text-2xl font-bold text-lime mb-2">Projects</h2>
         <p className="text-sage mb-10">A selection of things I&apos;ve built.</p>

@@ -17,7 +17,14 @@ html {
 }
 
 body {
-  background: #0f1208;
+  background-color: #0a0a0a;
+  background-image:
+    linear-gradient(rgba(10, 10, 10, 0.4), rgba(10, 10, 10, 0.4)),
+    url("/bg.png");
+  background-repeat: no-repeat, no-repeat;
+  background-size: cover, cover;
+  background-position: center, center;
+  background-attachment: fixed, fixed;
   color: #d4de95;
 }
 
@@ -33,41 +40,45 @@ body {
 }
 .jnav-link:hover { z-index: 9999; }
 
-/* invisible but keeps the link-wrapper wide enough for the image */
-.jnav-fallback {
-  font-size: 1em;
-  letter-spacing: 4px;
-  line-height: 40px;
-  opacity: 0;
-  white-space: nowrap;
-}
-
-/* NO position: relative here — images must anchor to .jnav-link, not this wrapper */
-.jnav-img-wrapper { }
-
-/* both images anchor to .jnav-link */
-.jnav-img {
-  width: auto;
-  height: 40px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
+/* visible text label — in flow so the link sizes to it, and above the shapes */
+.jnav-label {
+  position: relative;
   z-index: 999;
   display: block;
+  font-size: 0.95rem;
+  letter-spacing: 2px;
+  line-height: 40px;
+  color: var(--color-sage);
+  white-space: nowrap;
+  transform-origin: center;
+  transition: color .2s ease;
 }
-.jnav-img.jnav-normal { display: block; }
-.jnav-img.jnav-active { display: none; z-index: -1; }
 
-/* hover: animate images */
-.jnav-link:hover .jnav-img {
+/* hover: tilt/bounce the word, brighten it */
+.jnav-link:hover .jnav-label {
+  color: var(--color-lime);
   animation: jnavTiltBounce .15s ease;
   animation-fill-mode: forwards;
-  display: block;
 }
-.jnav-link:hover .jnav-img.jnav-normal { mix-blend-mode: darken; }
-.jnav-link.jnav-even:hover .jnav-img {
+.jnav-link.jnav-even:hover .jnav-label {
+  animation: jnavTiltBounceAlt .15s ease;
+  animation-fill-mode: forwards;
+}
+
+/* image label (persona sticker svg/png) — above the shapes, sizes the link */
+.jnav-label-img {
+  position: relative;
+  z-index: 999;
+  display: block;
+  height: 30px;
+  width: auto;
+  transform-origin: center;
+}
+.jnav-link:hover .jnav-label-img {
+  animation: jnavTiltBounce .15s ease;
+  animation-fill-mode: forwards;
+}
+.jnav-link.jnav-even:hover .jnav-label-img {
   animation: jnavTiltBounceAlt .15s ease;
   animation-fill-mode: forwards;
 }

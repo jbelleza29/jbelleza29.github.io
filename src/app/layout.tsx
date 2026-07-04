@@ -30,7 +30,7 @@ export default function RootLayout({
       lang="en"
       className={`${spaceGrotesk.variable} ${geistMono.variable} antialiased`}
     >
-      <body className="min-h-screen bg-canvas text-lime flex flex-col">
+      <body className="min-h-screen text-lime flex flex-col">
         <NavBar />
         {children}
       </body>

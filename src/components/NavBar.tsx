@@ -1,7 +1,7 @@
 const navItems = [
-  { label: "About",      href: "#about",      normal: "/nav/about-normal.svg",       active: "/nav/about-active.svg" },
-  { label: "Projects",   href: "#projects",   normal: "/nav/projects-normal.svg",    active: "/nav/projects-active.svg" },
-  { label: "Experience", href: "#experience", normal: "/nav/experiences-normal.svg", active: "/nav/experiences-active.svg" },
+  { label: "About",      href: "#about",      img: "/nav/about.png" },
+  { label: "Projects",   href: "#projects",   img: "/nav/projects.png" },
+  { label: "Experience", href: "#experience", img: "/nav/experience.png" },
 ];
 
 const shapes = [
@@ -28,13 +28,8 @@ export default function NavBar() {
               href={item.href}
               className={`jnav-link${i % 2 !== 0 ? " jnav-even" : ""}`}
             >
-              <span className="jnav-fallback">{item.label}</span>
-              <div className="jnav-img-wrapper">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img className="jnav-img jnav-normal" src={item.normal} alt={item.label} />
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img className="jnav-img jnav-active" src={item.active} alt="" />
-              </div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img className="jnav-label-img" src={item.img} alt={item.label} />
               <div className="jnav-shape-wrapper">
                 <div className="jnav-shape jnav-red jnav-jelly">
                   <svg viewBox="0 0 108.1 47" xmlns="http://www.w3.org/2000/svg">
