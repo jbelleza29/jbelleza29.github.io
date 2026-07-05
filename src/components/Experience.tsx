@@ -42,7 +42,7 @@ export default function Experience() {
             Where I&apos;ve worked and what I&apos;ve shipped.
           </Text>
         </VStack>
-        <div className="flex flex-col gap-5 mt-6">
+        <div className="flex flex-col gap-8 md:gap-5 mt-6">
           {experiences.map((exp) => (
             <Card key={exp.title + exp.company} padding={6}>
               <div className="flex flex-col sm:flex-row sm:gap-10">

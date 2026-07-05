@@ -16,9 +16,20 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://pritz.dev"),
   title: "Pritz Belleza | Senior Front-End Engineer",
   description:
     "Portfolio of John Pritz Belleza, senior front-end engineer specializing in design systems, Storybook, and Chromatic.",
+  openGraph: {
+    title: "Pritz Belleza | Senior Front-End Engineer",
+    description:
+      "Portfolio of John Pritz Belleza, senior front-end engineer specializing in design systems, Storybook, and Chromatic.",
+    images: ["/brand/og-cover.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/brand/og-cover.png"],
+  },
 };
 
 export default function RootLayout({

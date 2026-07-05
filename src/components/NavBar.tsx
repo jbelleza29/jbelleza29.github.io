@@ -11,7 +11,15 @@ export default function NavBar() {
     <div className="site-header fixed top-0 inset-x-0 z-50">
       <TopNav
         label="Primary"
-        heading={<TopNavHeading heading="JP" headingHref="#about" />}
+        heading={
+          <TopNavHeading
+            logo={
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src="/brand/jp-logo-white.svg" alt="JP" className="h-8 w-auto" />
+            }
+            headingHref="#about"
+          />
+        }
         startContent={navItems.map((item) => (
           <TopNavItem key={item.href} label={item.label} href={item.href} />
         ))}

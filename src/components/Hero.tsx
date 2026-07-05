@@ -17,7 +17,7 @@ const LinkedInIcon = () => (
 
 export default function Hero() {
   return (
-    <section id="about" className="flex flex-col justify-center min-h-[calc(100vh-var(--header-height))] pt-[var(--header-height)] px-6">
+    <section id="about" className="flex flex-col justify-center pt-[calc(var(--header-height)+2.5rem)] pb-16 px-6">
       <div className="mx-auto max-w-5xl w-full">
         <VStack gap={6}>
           <Text type="label" color="secondary">

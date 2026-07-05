@@ -11,6 +11,7 @@ const projects = [
     tech: ["Next.js 16", "Apollo", "GraphQL", "MongoDB", "Strava OAuth"],
     liveUrl: "https://starvingstarva.vercel.app",
     repoUrl: "https://github.com/jbelleza29/starva",
+    image: "/projects/starva.png",
   },
   {
     name: "clipforge",
@@ -29,6 +30,7 @@ const projects = [
     description: "Type text, get a Persona 5 calling-card style SVG graphic. Pure SVG generator core.",
     tech: ["TypeScript", "React", "SVG"],
     repoUrl: "https://github.com/jbelleza29/persona-5-font-gen",
+    image: "/projects/persona-5-font-gen.png",
   },
 ];
 
@@ -43,7 +45,7 @@ export default function ProjectsGrid() {
           </Text>
         </VStack>
         <div className="mt-6">
-          <Grid columns={{ minWidth: 280 }} gap={5}>
+          <Grid className="projects-grid" columns={{ minWidth: 280 }} gap={5}>
             {projects.map((p) => (
               <ProjectCard key={p.name} {...p} />
             ))}
