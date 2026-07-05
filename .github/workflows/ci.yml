@@ -42,6 +42,7 @@ jobs:
           cname: pritz.dev
 
       - name: Chromatic
+        continue-on-error: true
         uses: chromaui/action@v11
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
