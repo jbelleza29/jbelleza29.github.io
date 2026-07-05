@@ -1,5 +1,8 @@
 :HL["/_next/static/chunks/1vi0fdau2e4tj.css","style"]
-:HL["/_next/static/chunks/3bsnk62i-plps.css","style"]
+:HL["/_next/static/chunks/1i650w11d7gdy.css","style"]
 :HL["/_next/static/media/0c89a48fa5027cee-s.p.2cyn07wtgehh0.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/797e433ab948586e-s.p.0r6juujl39pe6.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"ASooNDJ6-SuX9MaA178kn"}
+:HL["/brand/jp-logo-white.svg","image"]
+:HL["/projects/starva.png","image"]
+:HL["/projects/persona-5-font-gen.png","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"INdg24UC1QjTxSYXAVeR1"}
