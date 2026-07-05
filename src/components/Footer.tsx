@@ -18,18 +18,22 @@ const LinkedInIcon = () => (
 export default function Footer() {
   return (
     <Section variant="section" dividers={["top"]} padding={6}>
-      <HStack hAlign="between" vAlign="center" gap={4} wrap="wrap">
+      <HStack hAlign="between" vAlign="center" gap={4}>
         <Text type="supporting">© 2026 John Pritz Belleza</Text>
         <HStack gap={5}>
-          <Link href="https://github.com/jbelleza29" isExternalLink hasUnderline>
-            <GitHubIcon /> GitHub
+          <Link href="https://github.com/jbelleza29" target="_blank" hasUnderline>
+            <span className="inline-flex items-center gap-1.5">
+              <GitHubIcon /> GitHub
+            </span>
           </Link>
           <Link
             href="https://www.linkedin.com/in/john-pritz-belleza-a651b6126/"
-            isExternalLink
+            target="_blank"
             hasUnderline
           >
-            <LinkedInIcon /> LinkedIn
+            <span className="inline-flex items-center gap-1.5">
+              <LinkedInIcon /> LinkedIn
+            </span>
           </Link>
         </HStack>
       </HStack>

@@ -31,7 +31,7 @@ export default function RootLayout({
       lang="en"
       className={`${spaceGrotesk.variable} ${geistMono.variable} antialiased`}
     >
-      <body className="min-h-screen flex flex-col">
+      <body>
         <Providers>
           <NavBar />
           {children}

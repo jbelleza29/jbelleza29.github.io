@@ -4,14 +4,64 @@
 
 @import "@astryxdesign/core/reset.css";
 @import "@astryxdesign/core/astryx.css";
-@import "../themes/portfolio.css";
+@import "@astryxdesign/theme-y2k/theme.css";
+
+:root {
+  --header-height: 4.5rem;
+}
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 3.5rem;
+  scroll-padding-top: var(--header-height);
 }
 
-body {
+.page-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background-color: var(--color-background-body);
   color: var(--color-text-primary);
+}
+
+/* CTA link, styled as a button. Uses the active Astryx theme's own tokens
+   (not the accent pair — --color-accent/--color-on-accent silently break in
+   y2k dark mode; astryx.css's own primary Button variant uses that exact
+   pair, so this isn't specific to our styling, it's a real gap in the theme). */
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--radius-element, 0.5rem);
+  font-weight: 500;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.cta-button-solid {
+  background-color: var(--color-background-inverted);
+  color: var(--color-on-light);
+  border: 1px solid var(--color-background-inverted);
+}
+.cta-button-solid:hover {
+  opacity: 0.85;
+}
+
+.cta-button-outline {
+  background-color: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+}
+.cta-button-outline:hover {
+  border-color: var(--color-background-inverted);
+  color: var(--color-text-primary);
+}
+
+.site-header {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  background-color: var(--color-background-body);
+  border-bottom: 1px solid var(--color-border);
 }

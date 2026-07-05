@@ -2,8 +2,9 @@ import { Card } from "@astryxdesign/core/Card";
 import { VStack } from "@astryxdesign/core/VStack";
 import { HStack } from "@astryxdesign/core/HStack";
 import { Text, Heading } from "@astryxdesign/core/Text";
-import { Badge } from "@astryxdesign/core/Badge";
+import { Token } from "@astryxdesign/core/Token";
 import { Link } from "@astryxdesign/core/Link";
+import { techColor } from "@/lib/tech-colors";
 
 interface ProjectCardProps {
   name: string;
@@ -31,7 +32,7 @@ export default function ProjectCard({
         </VStack>
         <HStack gap={2} wrap="wrap">
           {tech.map((t) => (
-            <Badge key={t} label={t} />
+            <Token key={t} label={t} color={techColor(t)} />
           ))}
         </HStack>
         <HStack gap={4}>

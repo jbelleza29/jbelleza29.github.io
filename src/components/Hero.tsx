@@ -1,7 +1,7 @@
 import { VStack } from "@astryxdesign/core/VStack";
 import { HStack } from "@astryxdesign/core/HStack";
 import { Text, Heading } from "@astryxdesign/core/Text";
-import { Link } from "@astryxdesign/core/Link";
+import LinkButton from "./LinkButton";
 
 const GitHubIcon = () => (
   <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -17,7 +17,7 @@ const LinkedInIcon = () => (
 
 export default function Hero() {
   return (
-    <section id="about" className="flex flex-col justify-center min-h-[calc(100vh-3.5rem)] pt-14 px-6">
+    <section id="about" className="flex flex-col justify-center min-h-[calc(100vh-var(--header-height))] pt-[var(--header-height)] px-6">
       <div className="mx-auto max-w-5xl w-full">
         <VStack gap={6}>
           <Text type="label" color="secondary">
@@ -51,16 +51,15 @@ export default function Hero() {
             </Text>
           </VStack>
           <HStack gap={4} wrap="wrap">
-            <Link href="https://github.com/jbelleza29" isExternalLink hasUnderline>
+            <LinkButton href="https://github.com/jbelleza29" variant="solid">
               <GitHubIcon /> GitHub
-            </Link>
-            <Link
+            </LinkButton>
+            <LinkButton
               href="https://www.linkedin.com/in/john-pritz-belleza-a651b6126/"
-              isExternalLink
-              hasUnderline
+              variant="outline"
             >
               <LinkedInIcon /> LinkedIn
-            </Link>
+            </LinkButton>
           </HStack>
         </VStack>
       </div>

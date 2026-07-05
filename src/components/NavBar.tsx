@@ -8,7 +8,7 @@ const navItems = [
 
 export default function NavBar() {
   return (
-    <div className="fixed top-0 inset-x-0 z-50">
+    <div className="site-header fixed top-0 inset-x-0 z-50">
       <TopNav
         label="Primary"
         heading={<TopNavHeading heading="JP" headingHref="#about" />}
