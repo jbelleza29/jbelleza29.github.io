@@ -15,7 +15,7 @@ export default function NavBar() {
           <TopNavHeading
             logo={
               // eslint-disable-next-line @next/next/no-img-element
-              <img src="/brand/jp-logo-white.svg" alt="JP" className="h-8 w-auto" />
+              <img src="/brand/jp-logo-white.svg" alt="JP" className="h-5 sm:h-7 w-auto" />
             }
             headingHref="#about"
           />

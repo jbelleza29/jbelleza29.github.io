@@ -23,8 +23,14 @@ export const WithLiveUrl: Story = {
 export const RepoOnly: Story = {
   args: {
     name: 'clipforge',
-    description: 'Video clip management and processing tool.',
-    tech: ['TypeScript', 'React'],
+    description: 'Command-line video clip processing tool. Python scripts for batch clip management, no UI.',
+    tech: ['Python'],
     repoUrl: 'https://github.com/jbelleza29/clipforge',
+    terminal: [
+      { kind: 'cmd', text: 'clipforge cut demo.mp4 --scene' },
+      { kind: 'muted', text: '→ detecting scene cuts…' },
+      { kind: 'out', text: '→ exported 6 clips → out/' },
+      { kind: 'ok', text: 'done in 4.2s' },
+    ],
   },
 }

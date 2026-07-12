@@ -3,8 +3,10 @@ import { VStack } from "@astryxdesign/core/VStack";
 import { HStack } from "@astryxdesign/core/HStack";
 import { Text, Heading } from "@astryxdesign/core/Text";
 import { Token } from "@astryxdesign/core/Token";
-import { Link } from "@astryxdesign/core/Link";
 import { techColor } from "@/lib/tech-colors";
+import TerminalPreview, { type TerminalLine } from "./TerminalPreview";
+import LinkButton from "./LinkButton";
+import { GitHubIcon, LiveIcon } from "./icons";
 
 interface ProjectCardProps {
   name: string;
@@ -13,6 +15,7 @@ interface ProjectCardProps {
   liveUrl?: string;
   repoUrl: string;
   image?: string;
+  terminal?: readonly TerminalLine[];
 }
 
 export default function ProjectCard({
@@ -22,6 +25,7 @@ export default function ProjectCard({
   liveUrl,
   repoUrl,
   image,
+  terminal,
 }: ProjectCardProps) {
   const primaryUrl = liveUrl ?? repoUrl;
 
@@ -41,6 +45,8 @@ export default function ProjectCard({
             alt={`${name} screenshot`}
             className="w-full h-full object-cover"
           />
+        ) : terminal ? (
+          <TerminalPreview title={name} lines={terminal} />
         ) : (
           <div className="relative w-full h-full bg-black">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -70,15 +76,21 @@ export default function ProjectCard({
             <Token key={t} label={t} color={techColor(t)} />
           ))}
         </HStack>
-        <HStack gap={4} className="mt-auto">
-          {liveUrl && (
-            <Link href={liveUrl} isExternalLink hasUnderline>
-              Live
-            </Link>
+        <HStack gap={3} className="mt-auto">
+          {liveUrl ? (
+            <>
+              <LinkButton href={liveUrl} variant="solid">
+                <LiveIcon /> Live
+              </LinkButton>
+              <LinkButton href={repoUrl} variant="outline">
+                <GitHubIcon /> GitHub
+              </LinkButton>
+            </>
+          ) : (
+            <LinkButton href={repoUrl} variant="solid">
+              <GitHubIcon /> GitHub
+            </LinkButton>
           )}
-          <Link href={repoUrl} isExternalLink hasUnderline>
-            GitHub
-          </Link>
         </HStack>
       </VStack>
     </ClickableCard>

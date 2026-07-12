@@ -78,3 +78,26 @@ html {
     gap: 1.25rem;
   }
 }
+
+/* TopNav has no responsive drawer here (that needs AppShell), so on mobile the
+   full horizontal bar has to fit. Tighten the item padding and the 24px
+   logo-to-items gap, and let the items row scroll rather than clip off-screen
+   as a last resort. Structural selectors target TopNav's internal layout:
+   nav > leftSection > [heading, startContent]. */
+@media (max-width: 480px) {
+  .site-header .astryx-top-nav-item {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .site-header nav > div {
+    gap: 0.5rem;
+  }
+  .site-header nav > div > div:last-child {
+    min-width: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .site-header nav > div > div:last-child::-webkit-scrollbar {
+    display: none;
+  }
+}
