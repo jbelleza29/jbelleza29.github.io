@@ -79,10 +79,10 @@ export default function ProjectCard({
         <HStack gap={3} className="mt-auto">
           {liveUrl ? (
             <>
-              <LinkButton href={liveUrl} variant="solid">
+              <LinkButton href={liveUrl} variant="outline">
                 <LiveIcon /> Live
               </LinkButton>
-              <LinkButton href={repoUrl} variant="outline">
+              <LinkButton href={repoUrl} variant="solid">
                 <GitHubIcon /> GitHub
               </LinkButton>
             </>
