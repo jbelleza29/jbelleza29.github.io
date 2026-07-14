@@ -26,12 +26,6 @@ const projects = [
     ] as const,
   },
   {
-    name: "just-cook",
-    description: "Recipe discovery and meal planning app. 1-day Take-home project",
-    tech: ["TypeScript", "React"],
-    repoUrl: "https://github.com/jbelleza29/just-cook",
-  },
-  {
     name: "persona-5-font-gen",
     description: "Type text, get a Persona 5 calling-card style SVG graphic. Pure SVG generator core.",
     tech: ["TypeScript", "React", "SVG"],
