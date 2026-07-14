@@ -5,4 +5,4 @@
 :HL["/brand/jp-logo-white.svg","image"]
 :HL["/projects/starva.png","image"]
 :HL["/projects/persona-5-font-gen.png","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"qEWnfdSKSSohScaoLRW2j"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"P6F8wj2sn1h1nvCq2I3sX"}
