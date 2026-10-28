@@ -14,6 +14,15 @@ const projects = [
     image: "/projects/starva.png",
   },
   {
+    name: "Overkill Tracker",
+    description:
+      "Mobile-first workout log for a novice bodybuilding program. A tested progression engine sets each lift's next load. Works without an account and syncs across devices through a Go + SQLite API.",
+    tech: ["Next.js 16", "TypeScript", "Go", "SQLite", "Claude API"],
+    liveUrl: "https://overkilltracker.pritz.dev",
+    repoUrl: "https://github.com/jbelleza29/novice-bb-tracker",
+    image: "/projects/overkill-tracker.png",
+  },
+  {
     name: "clipforge",
     description: "Command-line video clip processing tool. Python scripts for batch clip management, no UI.",
     tech: ["Python"],
